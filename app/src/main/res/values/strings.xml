@@ -10,4 +10,17 @@
     <string name="register">注册</string>
     <string name="user_rule">用户名设置小于6位！</string>
     <string name="password_rule">密码设置小于6位！！</string>
+    <string name="user_password_error">用户名或密码错误！！</string>
+    <string name="train_ticket">车票</string>
+    <string name="user_unregister">该用户未注册！！</string>
+    <string-array name="card_title">
+        <item>飞机</item>
+        <item>车票</item>
+        <item>汽车</item>
+        <item>蛋糕</item>
+        <item>美食</item>
+        <item>手表</item>
+        <item>电脑</item>
+        <item>手机</item>
+    </string-array>
 </resources>

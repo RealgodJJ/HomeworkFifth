@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -61,8 +62,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.bt_login:
                 String user = etInputUser.getText().toString();
                 String password = etInputPassword.getText().toString();
-                if (account.getUser().equals(user) && account.getPassword().equals(password))
+                if (account.getUser() == null) {
+                    Toast.makeText(LoginActivity.this, getString(R.string.user_unregister),
+                            Toast.LENGTH_SHORT).show();
+                } else if (account.getUser().equals(user) && account.getPassword().equals(password))
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                else
+                    Toast.makeText(LoginActivity.this, getString(R.string.user_password_error),
+                            Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.bt_find_password:
