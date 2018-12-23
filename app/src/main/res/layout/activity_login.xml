@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login_header"
+        style="@style/tv_header"
+        android:text="@string/user_login" />
+
+    <RelativeLayout
+        style="@style/rl_content"
+        android:layout_below="@id/tv_login_header">
+
+        <ImageView
+            android:id="@+id/iv_register_user"
+            style="@style/iv_user"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_password"
+            style="@style/iv_password"
+            android:layout_below="@id/iv_register_user"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/et_input_user"
+            style="@style/et_user"
+            android:layout_alignBottom="@id/iv_register_user"
+            android:layout_toEndOf="@id/iv_register_user"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/et_input_password"
+            style="@style/et_password"
+            android:layout_alignStart="@id/et_input_user"
+            android:layout_alignBottom="@id/iv_password"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+        <Button
+            android:id="@+id/bt_login"
+            style="@style/bt_login"
+            android:layout_below="@id/iv_password"
+            android:text="@string/login" />
+
+        <Button
+            android:id="@+id/bt_find_password"
+            style="@style/bt_find_password_free_register"
+            android:layout_below="@id/bt_login"
+            android:text="@string/find_password" />
+
+        <Button
+            android:id="@+id/bt_free_register"
+            style="@style/bt_find_password_free_register"
+            android:layout_below="@id/bt_login"
+            android:layout_alignEnd="@id/bt_login"
+            android:text="@string/free_register" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

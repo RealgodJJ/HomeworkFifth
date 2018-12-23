@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HomeworkFifth</string>
+    <string name="user_login">用户登录</string>
+    <string name="input_user_phone_mail">请输入用户名/手机/邮箱</string>
+    <string name="input_password">请输入登录密码</string>
+    <string name="login">登录</string>
+    <string name="find_password">找回密码</string>
+    <string name="free_register">免费注册</string>
+    <string name="user_register">用户注册</string>
+    <string name="register">注册</string>
+    <string name="user_rule">用户名设置小于6位！</string>
+    <string name="password_rule">密码设置小于6位！！</string>
+</resources>
