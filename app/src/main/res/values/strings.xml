@@ -17,6 +17,11 @@
     <string name="price">￥%1$s</string>
     <string name="new_user_one_yuan">新用户一元</string>
     <string name="num_sold_out">已售：%1$d</string>
+    <string name="beijing">北京</string>
+    <string name="everybody_buy">--大家都在团--</string>
+    <string name="main_page">主页</string>
+    <string name="shopping">购物</string>
+    <string name="user">用户</string>
     <string-array name="card_title">
         <item>飞机</item>
         <item>车票</item>
@@ -27,4 +32,7 @@
         <item>电脑</item>
         <item>手机</item>
     </string-array>
+
+    <string name="hello_shopping_fragment">Hello shopping fragment</string>
+    <string name="hello_user_fragment">Hello user fragment</string>
 </resources>

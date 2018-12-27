@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="40dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/mediumseagreen"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/login"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/search"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/et_background"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/beijing"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/arrow"
+        tools:ignore="ContentDescription" />
+
+</LinearLayout>
