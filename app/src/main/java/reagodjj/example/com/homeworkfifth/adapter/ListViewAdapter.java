@@ -37,7 +37,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return foodInfoList.get(position).getId();
     }
 
     @Override
@@ -66,6 +66,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         return convertView;
     }
+
 
     class ViewHolder {
         ImageView ivFood;

@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
@@ -32,12 +33,11 @@ import reagodjj.example.com.homeworkfifth.entity.FoodInfo;
 import reagodjj.example.com.homeworkfifth.entity.FoodResult;
 import reagodjj.example.com.homeworkfifth.entity.GridViewCard;
 
-public class MainFragment extends Fragment {
-    public static final String ACTION = "action";
+public class MainFragment extends Fragment implements AdapterView.OnItemClickListener {
     private GridView gvFirstMenu;
     private ListView lvFoodItem;
     private List<GridViewCard> gridViewCardList;
-    private List<FoodInfo> foodInfoList;
+    private List<FoodInfo> foodInfoList = new ArrayList<>();
     private ListViewAdapter listViewAdapter;
     private int cardList[] = {R.drawable.fly1, R.drawable.car, R.drawable.autombile1,
             R.drawable.cake, R.drawable.food, R.drawable.watch, R.drawable.cp, R.drawable.phone};
@@ -52,7 +52,6 @@ public class MainFragment extends Fragment {
     private static final String PRICE = "price";
     private static final String DESCRIPTION = "description";
     private static final String _ACTION = "action";
-
     //    private String titleList[] = {"飞机", "车票", "汽车", "蛋糕", "美食", "手表", "电脑", "手机"};
 
     @Nullable
@@ -68,7 +67,10 @@ public class MainFragment extends Fragment {
         initGridView();
 
         lvFoodItem = Objects.requireNonNull(getView()).findViewById(R.id.lv_food_item);
-        new RequestFoodAsyncTask(listViewAdapter).execute();
+        lvFoodItem.setOnItemClickListener(this);
+//        listViewAdapter = new ListViewAdapter(getActivity(), foodInfoList);
+//        lvFoodItem.setAdapter(listViewAdapter);
+        new RequestFoodAsyncTask().execute();
     }
 
     private void initGridView() {
@@ -84,14 +86,24 @@ public class MainFragment extends Fragment {
         gvFirstMenu.setAdapter(gridViewAdapter);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (foodInfoList.get(position).getId() == 3) {
+            FoodInfo foodInfo = foodInfoList.get(position);
+            Bundle bundle = new Bundle();
+            bundle.putString(NAME, foodInfo.getName());
+
+            FoodFragment foodFragment = new FoodFragment();
+            foodFragment.setArguments(bundle);
+
+            assert getFragmentManager() != null;
+            getFragmentManager().beginTransaction().addToBackStack(null)
+                    .replace(R.id.rl_container_content, foodFragment).commit();
+        }
+    }
+
     @SuppressLint("StaticFieldLeak")
     public class RequestFoodAsyncTask extends AsyncTask<Void, Void, String> {
-        private ListViewAdapter listViewAdapter;
-
-        RequestFoodAsyncTask(ListViewAdapter listViewAdapter) {
-            this.listViewAdapter = listViewAdapter;
-        }
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -143,7 +155,6 @@ public class MainFragment extends Fragment {
                 foodResult.setStatus(status);
                 foodResult.setMessage(message);
 
-                foodInfoList = new ArrayList<>();
                 if (status == 1 && message.equals("成功")) {
                     JSONArray jsonArray = jsonObject.getJSONArray(DATA);
 

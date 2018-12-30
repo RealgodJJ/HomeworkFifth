@@ -30,6 +30,7 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
+                android:id="@+id/iv_main_page"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/indexa"
@@ -53,6 +54,7 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
+                android:id="@+id/iv_shopping"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/shopb"
@@ -75,6 +77,7 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
+                android:id="@+id/iv_user"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/userb"

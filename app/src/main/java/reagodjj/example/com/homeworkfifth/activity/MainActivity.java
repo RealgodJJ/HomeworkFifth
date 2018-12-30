@@ -3,8 +3,8 @@ package reagodjj.example.com.homeworkfifth.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import reagodjj.example.com.homeworkfifth.R;
 import reagodjj.example.com.homeworkfifth.activity.fragment.MainFragment;
@@ -13,7 +13,7 @@ import reagodjj.example.com.homeworkfifth.activity.fragment.UserFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private LinearLayout llMainMenu, llShoppingMenu, llUserMenu;
-
+    private ImageView ivMainPage, ivShopping, ivUser;
     protected MainFragment mainFragment = new MainFragment();
     protected ShoppingFragment shoppingFragment = new ShoppingFragment();
     protected UserFragment userFragment = new UserFragment();
@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llShoppingMenu = findViewById(R.id.ll_shopping_menu);
         llUserMenu = findViewById(R.id.ll_user_menu);
 
+        ivMainPage = findViewById(R.id.iv_main_page);
+        ivShopping = findViewById(R.id.iv_shopping);
+        ivUser = findViewById(R.id.iv_user);
+
         llMainMenu.setOnClickListener(this);
         llShoppingMenu.setOnClickListener(this);
         llUserMenu.setOnClickListener(this);
@@ -48,16 +52,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ll_main_menu:
                 getSupportFragmentManager().beginTransaction().show(mainFragment).hide(shoppingFragment)
                         .hide(userFragment).commit();
+                ivMainPage.setImageResource(R.drawable.indexa);
+                ivShopping.setImageResource(R.drawable.shopb);
+                ivUser.setImageResource(R.drawable.userb);
                 break;
 
             case R.id.ll_shopping_menu:
                 getSupportFragmentManager().beginTransaction().hide(mainFragment).show(shoppingFragment)
                         .hide(userFragment).commit();
+                ivMainPage.setImageResource(R.drawable.indexb);
+                ivShopping.setImageResource(R.drawable.shopa);
+                ivUser.setImageResource(R.drawable.userb);
                 break;
 
             case R.id.ll_user_menu:
                 getSupportFragmentManager().beginTransaction().hide(mainFragment).hide(shoppingFragment)
                         .show(userFragment).commit();
+                ivMainPage.setImageResource(R.drawable.indexb);
+                ivShopping.setImageResource(R.drawable.shopb);
+                ivUser.setImageResource(R.drawable.usera);
                 break;
         }
     }

@@ -15,6 +15,9 @@
     <string name="user_unregister">该用户未注册！！</string>
     <string name="beef">牛肉</string>
     <string name="price">￥%1$s</string>
+    <string name="price_1">￥%1$2.2f</string>
+    <string name="price_down">￥%1$s拿下</string>
+    <string name="t_price">团购价：￥%1$2.2f</string>
     <string name="new_user_one_yuan">新用户一元</string>
     <string name="num_sold_out">已售：%1$d</string>
     <string name="beijing">北京</string>
@@ -32,7 +35,14 @@
         <item>电脑</item>
         <item>手机</item>
     </string-array>
-
     <string name="hello_shopping_fragment">Hello shopping fragment</string>
     <string name="hello_user_fragment">Hello user fragment</string>
+    <string name="pine_nuts_prawns">松仁大虾</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rating">评分：￥%1$2.1f</string>
+    <string name="product_detail_information">商品详细信息</string>
+    <string name="food_information">%1$s</string>
+    <string name="food_no_information">暂无信息</string>
+    <string name="buy_success">购买成功！！</string>
+    <string name="no_rating">评分</string>
 </resources>
